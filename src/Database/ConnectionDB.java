@@ -11,7 +11,7 @@ package Database;
  */
 public abstract class ConnectionDB {
 
-    final String db_url = "jdbc:mysql://localhost/crossca";
+    final String db_url = "jdbc:mysql://localhost/eirvid";
     final String db_email = "root";
     final String db_password = "root";
 
