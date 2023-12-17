@@ -8,6 +8,30 @@ package eirvid;
  *
  * @author yjang
  */
+
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+
 public class database {
-   // TODO code application logic here
+  
+    public static void main(String[] args){
+    
+        String url="jdbc:mysql://localhost:3306/eirvid";
+        String username="root";
+        String password="root";
+        try{
+        
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            Connection connection=DriverManager.getConnection(url,username,password);
+       
+             Statement statement = connection.createStatement();
+            
+            }catch (Exception e){
+            System.out.println(e);
+            }
+ 
+
+    }
 }
