@@ -27,8 +27,8 @@ public class Login extends ConnectionDB {
         System.out.println("-------------------------");
         System.out.println("------MAIN MENU----------");
         System.out.println("-------------------------");
-        System.out.println("1. LOGIN");
-        System.out.println("2. SIGN-UP");
+        System.out.println("1. SIGN-UP");
+        System.out.println("2. LOGIN");
         System.out.println("3. EXIT");
         System.out.println("Your choice: ");
         boolean quit = false;
@@ -39,12 +39,12 @@ public class Login extends ConnectionDB {
                 int input = sc.nextInt();
                 switch (input) {
                     case 1:
-                        System.out.println("Enter your username: ");
-                        String username = sc.next();
+                        System.out.println("Enter your email: ");
+                        String email = sc.next();
                         System.out.println("Enter your password: ");
                         String password = sc.next();
-                        User user = loginUser(username, password); //check user's username and password
-                        Admin admin = loginAdmin(username, password); //check user's username and password
+                        User user = loginUser(email, password); //check user's username and password
+                        Admin admin = loginAdmin(email, password); //check user's username and password
                         if (user != null) {
                             UserDB us = new UserDB(user); 
                             us.menuUserChoice();
