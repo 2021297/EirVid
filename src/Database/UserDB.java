@@ -233,8 +233,8 @@ public class UserDB extends ConnectionDB {
                     + "username varchar(255),"
                     + "password varchar(255),"
                     + "firstname varchar(255),"
-                    + "lastname varchar(255),"
-                    + "level varchar(55));"
+                    + "lastname varchar(255)"
+                    
             );
             create.executeUpdate();
 
