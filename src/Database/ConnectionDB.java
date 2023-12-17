@@ -9,6 +9,10 @@ package Database;
  *
  * @author deece
  */
-public class ConnectionDB {
-    
+public abstract class ConnectionDB {
+
+    final String db_url = "jdbc:mysql://localhost/crossca";
+    final String db_email = "root";
+    final String db_password = "root";
+
 }

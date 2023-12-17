@@ -9,6 +9,9 @@ package Entity;
  *
  * @author deece
  */
-public class Level {
+public enum Level {
+    admin,
+    regular;
     
+    int id;
 }

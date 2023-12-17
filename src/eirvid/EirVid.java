@@ -4,6 +4,8 @@
  */
 package eirvid;
 
+import Database.Login;
+
 /**
  *
  * @author yjang
@@ -14,9 +16,8 @@ public class EirVid {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("kkk");
-        System.out.println("miare yu");
+        Login lg = new Login();
+        lg.login();
         
     }
     
