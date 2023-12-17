@@ -72,24 +72,24 @@ public class Login extends ConnectionDB {
         }
     }
 
-    public User loginUser(String username, String password) throws ClassNotFoundException {
+    public User loginUser(String email, String password) throws ClassNotFoundException {
 
         User user = null;
         try {
             Connection con = DriverManager.getConnection(db_url, db_email, db_password);
             PreparedStatement login = con.prepareStatement("SELECT * FROM user_data WHERE "
-                    + "username='" + username + "' && password='" + password + "' "
+                    + "email='" + email + "' && password='" + password + "' "
             );
             login.execute();
             ResultSet rs = login.executeQuery();
             while (rs.next()) {
                 int dbid = rs.getInt("id");
-                String dbusername = rs.getString("username");
+                String dbemail = rs.getString("email");
                 String dbpassword = rs.getString("password");
                 String dbfirstname = rs.getString("firstname");
                 String dblastname = rs.getString("lastname");
                 Level dblevel = Level.valueOf(rs.getString("level"));
-                user = new User(dbid, dbusername, dbpassword, dbfirstname, dblastname, dblevel);
+                user = new User(dbid, dbemail, dbpassword, dbfirstname, dblastname, dblevel);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -97,24 +97,24 @@ public class Login extends ConnectionDB {
         return user;
     }
 
-    public Admin loginAdmin(String username, String password) throws ClassNotFoundException {
+    public Admin loginAdmin(String email, String password) throws ClassNotFoundException {
 
         Admin admin = null;
         try {
             Connection con = DriverManager.getConnection(db_url, db_email, db_password);
             PreparedStatement login = con.prepareStatement("SELECT * FROM admin_data WHERE "
-                    + "username='" + username + "' && password='" + password + "' "
+                    + "email='" + email + "' && password='" + password + "' "
             );
             login.execute();
             ResultSet rs = login.executeQuery();
             while (rs.next()) {
                 int dbid = rs.getInt("id");
-                String dbusername = rs.getString("username");
+                String dbemail = rs.getString("email");
                 String dbpassword = rs.getString("password");
                 String dbfirstname = rs.getString("firstname");
                 String dblastname = rs.getString("lastname");
                 Level dblevel = Level.valueOf(rs.getString("level"));
-                admin = new Admin(dbid, dbusername, dbpassword, dbfirstname, dblastname, dblevel);
+                admin = new Admin(dbid, dbemail, dbpassword, dbfirstname, dblastname, dblevel);
             }
         } catch (SQLException e) {
             e.printStackTrace();
