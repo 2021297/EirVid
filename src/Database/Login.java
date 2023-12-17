@@ -77,7 +77,7 @@ public class Login extends ConnectionDB {
         User user = null;
         try {
             Connection con = DriverManager.getConnection(db_url, db_email, db_password);
-            PreparedStatement login = con.prepareStatement("SELECT * FROM user_data WHERE "
+            PreparedStatement login = con.prepareStatement("SELECT * FROM eirvid WHERE "
                     + "email='" + email + "' && password='" + password + "' "
             );
             login.execute();
@@ -102,7 +102,7 @@ public class Login extends ConnectionDB {
         Admin admin = null;
         try {
             Connection con = DriverManager.getConnection(db_url, db_email, db_password);
-            PreparedStatement login = con.prepareStatement("SELECT * FROM admin_data WHERE "
+            PreparedStatement login = con.prepareStatement("SELECT * FROM eirvid WHERE "
                     + "email='" + email + "' && password='" + password + "' "
             );
             login.execute();
