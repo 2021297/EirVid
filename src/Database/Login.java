@@ -78,7 +78,7 @@ public class Login extends ConnectionDB {
         try {
             Connection con = DriverManager.getConnection(db_url, db_email, db_password);
             PreparedStatement login = con.prepareStatement("SELECT * FROM eirvid WHERE "
-                    + "email='" + email + "' && password='" + password + "' "
+                    + "Email='" + email + "' && Password='" + password + "' "
             );
             login.execute();
             ResultSet rs = login.executeQuery();
